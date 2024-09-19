@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable no-sequences */
 import Layout from "../../Layout/Layout";
 import banner from "../../assets/mainbanner.png";
 import arrow from "../../assets/arrowright.svg";
@@ -8,8 +8,15 @@ import creepers from "../../assets/creepers.png";
 import succulents from "../../assets/succulents.png";
 import seeds from "../../assets/seeds.png";
 import gifting from "../../assets/gifting.png";
+import AirPlants from "../../assets/AirPlants.png";
+import Indoor from "../../assets/Indoor.png";
+import Flowering from "../../assets/Flowering.png";
+
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import "./MainPage.css";
+import { log } from "console";
 
 const MainPage = () => {
   interface Category {
@@ -27,20 +34,42 @@ const MainPage = () => {
   ];
 
   interface Bests {
+    image: string;
+  }
+
+  interface Plant {
+    id: number;
     name: string;
   }
 
   const bestSellers: Array<Bests> = [
     {
-      name: "Indoor Plants",
+      image: Indoor,
     },
     {
-      name: "Air Purifying Plants",
+      image: AirPlants,
     },
     {
-      name: "Flowering Plants",
+      image: Flowering,
     },
   ];
+
+  const [plants, setPlants] = useState<Plant[] | null>(null); // Устанавливаем начальное состояние как null
+
+  const getPlants = async () => {
+    try {
+      const { data } = await axios.get<Plant[]>(
+        "https://perenual.com/api/species-list?key=sk-wPyd66ec52fcd7db46911"
+      );
+      setPlants(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPlants();
+  }, []);
 
   return (
     <Layout>
@@ -69,7 +98,7 @@ const MainPage = () => {
             {bestSellers.map((item) => {
               return (
                 <div className="bestsellers_cards">
-                  <h2>{item.name}</h2>
+                  <img src={item.image} alt="cards_image" />
                   <button className="bestsellers_cardsBtn">Shop now</button>
                 </div>
               );

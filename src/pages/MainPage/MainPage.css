@@ -24,13 +24,20 @@
 
 .categories {
   display: flex;
+  margin: 0 auto;
   justify-content: center;
+  max-width: 1200px;
 }
 
 .categories_icons {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.best {
+  max-width: 1200px;
+  margin: auto;
 }
 
 .best h2 {
@@ -45,11 +52,29 @@
 
 .bestsellers {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .bestsellers_cards {
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 20px;
+  background-color: #dbdbdb;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+.bestsellers_cards img {
+  width: 90%;
+}
+
+.bestsellers_cardsBtn {
+  padding: 15px;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  background-color: #3b823e;
+  color: #ffffff;
+  cursor: pointer;
 }
