@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.mainpage_banner {
+  width: 100%;
+}
+
+.all {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 9%;
+  padding: 2%;
+}
+
+.all a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #3b823e;
+}
+
+.all a:hover {
+  text-decoration: underline;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+}
+
+.categories_icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.best h2 {
+  font-family: "Unna", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 35px;
+  text-decoration: underline;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.bestsellers {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bestsellers_cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
