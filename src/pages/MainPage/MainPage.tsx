@@ -22,23 +22,15 @@ const MainPage = () => {
     image: string;
   }
 
-  interface PlantImage {
-    original_url: string;
-    regular_url: string;
-    medium_url: string;
-    small_url: string;
-    thumbnail: string;
-  }
-
   interface Plant {
     id: number;
-    common_name: string;
-    scientific_name: string[];
-    other_name: string[];
-    cycle: string;
-    watering: string;
-    sunlight: string[];
-    default_image: PlantImage;
+    name: string;
+    category: string;
+    origin: string;
+    watering_frequency: string;
+    light_needs: string;
+    price: number;
+    image: string;
   }
 
   const categories: Array<Category> = [
@@ -57,22 +49,16 @@ const MainPage = () => {
   ];
 
   const [plants, setPlants] = useState<Plant[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
 
   const getPlants = async () => {
     try {
       const { data } = await axios.get<Plant[]>(
-        `${process.env.REACT_APP_MAIN_API}`
+        `${process.env.REACT_APP_MAIN_API}/trendingPlants`
       );
 
-      console.log("Plants data:", data);
       setPlants(data);
     } catch (error) {
       console.error("Error fetching plants data:", error);
-      setError("Error fetching plants data");
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -109,44 +95,31 @@ const MainPage = () => {
               </div>
             ))}
           </div>
-
-          {loading && <p>Loading plants...</p>}
-          {error && <p>{error}</p>}
-
-          {!loading && !error && plants.length > 0 && (
-            <div className="plants-list">
-              {plants.map((plant) => (
-                <div key={plant.id} className="plant-card">
-                  <img
-                    src={plant.default_image?.thumbnail || ""}
-                    alt={plant.common_name}
-                    className="plant-image"
-                  />
-                  <h3>{plant.common_name}</h3>
-                  <p>
-                    <strong>Scientific Name:</strong>{" "}
-                    {plant.scientific_name.join(", ")}
-                  </p>
-                  <p>
-                    <strong>Other Names:</strong> {plant.other_name.join(", ")}
-                  </p>
-                  <p>
-                    <strong>Cycle:</strong> {plant.cycle}
-                  </p>
-                  <p>
-                    <strong>Watering:</strong> {plant.watering}
-                  </p>
-                  <p>
-                    <strong>Sunlight:</strong> {plant.sunlight.join(", ")}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {!loading && !error && plants.length === 0 && (
-            <p>No plants available</p>
-          )}
+        </section>
+        <section className="trending">
+          <h2>Trending Plants</h2>
+          <div className="trending-plants">
+            {plants &&
+              plants.map((item) => {
+                return (
+                  <div className="trending-general" key={item.id}>
+                    <div className="trending-images_block">
+                      <img
+                        src={item.image}
+                        alt="trending-images"
+                        className="trending-images"
+                      />
+                    </div>
+                    <div className="trending-name">
+                      <p>{item.name}</p>
+                    </div>
+                    <div className="trendingBtn-block">
+                      <button className="trendingBtn">Buy</button>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
         </section>
       </div>
     </Layout>

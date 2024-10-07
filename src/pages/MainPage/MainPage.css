@@ -82,3 +82,47 @@
 .plants-list {
   margin-top: 200px;
 }
+
+.trending h2 {
+  font-family: "Unna", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 35px;
+  text-decoration: underline;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.trending-images_block {
+  max-width: 230px;
+  display: flex;
+  justify-content: center;
+}
+
+.trending-images {
+  width: 80%;
+}
+
+.trending-plants {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.trending-general {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #dbdbdb;
+  align-items: center;
+}
+
+.trendingBtn {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 100%;
+}

@@ -1,0 +1,84 @@
+{
+  "trendingPlants": [
+    {
+      "id": 1,
+      "name": "Бонсай Фикус",
+      "category": "Бонсай",
+      "origin": "Китай",
+      "watering_frequency": "Раз в неделю",
+      "light_needs": "Яркий свет",
+      "price": 1500.0,
+      "image": "https://www.plantshop.me/media/1536310812Plant_1-600x600.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Алоэ Вера",
+      "category": "Суккулент",
+      "origin": "Африка",
+      "watering_frequency": "Раз в две недели",
+      "light_needs": "Яркий свет",
+      "price": 300.0,
+      "image": "https://www.plantshop.me/media/1536310812Plant_1-600x600.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Кактус Эхинокактус",
+      "category": "Кактус",
+      "origin": "Мексика",
+      "watering_frequency": "Раз в три недели",
+      "light_needs": "Яркий свет",
+      "price": 500.0,
+      "image": "https://www.plantshop.me/media/1536310812Plant_1-600x600.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Фикус Бенджамина",
+      "category": "Дерево",
+      "origin": "Юго-Восточная Азия",
+      "watering_frequency": "Раз в неделю",
+      "light_needs": "Полутень",
+      "price": 1200.0,
+      "image": "https://www.plantshop.me/media/1536310812Plant_1-600x600.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Маранта Лейконевра",
+      "category": "Травянистое",
+      "origin": "Южная Америка",
+      "watering_frequency": "Раз в три дня",
+      "light_needs": "Полутень",
+      "price": 600.0,
+      "image": "https://www.plantshop.me/media/1536310812Plant_1-600x600.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Орхидея Фаленопсис",
+      "category": "Цветущее",
+      "origin": "Юго-Восточная Азия",
+      "watering_frequency": "Раз в неделю",
+      "light_needs": "Яркий свет",
+      "price": 1000.0,
+      "image": "https://www.plantshop.me/media/1536310812Plant_1-600x600.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Сансевиерия",
+      "category": "Суккулент",
+      "origin": "Африка",
+      "watering_frequency": "Раз в месяц",
+      "light_needs": "Полутень",
+      "price": 400.0,
+      "image": "https://www.plantshop.me/media/1536310812Plant_1-600x600.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Монстера",
+      "category": "Тропическое",
+      "origin": "Центральная Америка",
+      "watering_frequency": "Раз в неделю",
+      "light_needs": "Полутень",
+      "price": 800.0,
+      "image": "https://www.plantshop.me/media/1536310812Plant_1-600x600.jpg"
+    }
+  ]
+}
