@@ -148,5 +148,42 @@
       "price": 350,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_qmCRp1cRn8-nFK7fm-g51yVgzOF11zJayoyfa1zNJnrY-rzQ5gLxYrZhJtvTTQ883Y0&usqp=CAU"
     }
+  ],
+  "Celebs": [
+    {
+      "id": 1,
+      "name": "will smith",
+      "image": "https://goldenglobes.com/wp-content/uploads/2023/10/will-smith-c-hfpa-2016.jpg"
+    },
+    {
+      "id": 2,
+      "name": "will smith",
+      "image": "https://goldenglobes.com/wp-content/uploads/2023/10/will-smith-c-hfpa-2016.jpg"
+    },
+    {
+      "id": 3,
+      "name": "will smith",
+      "image": "https://goldenglobes.com/wp-content/uploads/2023/10/will-smith-c-hfpa-2016.jpg"
+    },
+    {
+      "id": 4,
+      "name": "will smith",
+      "image": "https://goldenglobes.com/wp-content/uploads/2023/10/will-smith-c-hfpa-2016.jpg"
+    },
+    {
+      "id": 5,
+      "name": "will smith",
+      "image": "https://goldenglobes.com/wp-content/uploads/2023/10/will-smith-c-hfpa-2016.jpg"
+    },
+    {
+      "id": 6,
+      "name": "will smith",
+      "image": "https://goldenglobes.com/wp-content/uploads/2023/10/will-smith-c-hfpa-2016.jpg"
+    },
+    {
+      "id": 7,
+      "name": "will smith",
+      "image": "https://goldenglobes.com/wp-content/uploads/2023/10/will-smith-c-hfpa-2016.jpg"
+    }
   ]
 }

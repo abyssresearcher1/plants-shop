@@ -10,6 +10,7 @@ import gifting from "../../assets/gifting.png";
 import AirPlants from "../../assets/AirPlants.png";
 import Indoor from "../../assets/Indoor.png";
 import Flowering from "../../assets/Flowering.png";
+import gardening from "../../assets/gardening.png";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -17,6 +18,12 @@ import axios from "axios";
 import "./MainPage.css";
 
 const MainPage = () => {
+  interface CelebsRoot {
+    id: number;
+    name: string;
+    image: string;
+  }
+
   interface Category {
     name: string;
     image: string;
@@ -69,6 +76,7 @@ const MainPage = () => {
   const [plants, setPlants] = useState<Plant[]>([]);
   const [hotSales, setHotSales] = useState<HotSalesPlants[]>([]);
   const [planters, setPlanters] = useState<Planters[]>([]);
+  const [celebs, setCelebs] = useState<CelebsRoot[]>([]);
 
   const getPlants = async () => {
     try {
@@ -104,10 +112,22 @@ const MainPage = () => {
     }
   };
 
+  const getCelebs = async () => {
+    try {
+      const { data } = await axios.get<CelebsRoot[]>(
+        `${process.env.REACT_APP_MAIN_API}/Celebs`
+      );
+      setCelebs(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getPlants();
     getHotSales();
     getPlanters();
+    getCelebs();
   }, []);
 
   return (
@@ -224,6 +244,40 @@ const MainPage = () => {
                       <p>{planter.name}</p>
                       <span>${planter.price}</span>
                       <button className="plantersBtn">Buy</button>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </section>
+        <section className="Gardening">
+          <div className="gardening-general">
+            <div className="gardening-text gardening-block">
+              <h2>Landscape Gardening</h2>
+              <p>
+                Whether it is growing your own food or setting up your roof-top
+                garden, we provide the highest quality landscaping services,
+                contributing to a greener world and substantial living! Schedule
+                your service appointment today!
+                <br />
+                *Service only available in Telangana and AndhraPradesh.
+              </p>
+              <button className="gardeningBtn">Book Now!</button>
+            </div>
+            <div className="gardening-image gardening-block">
+              <img src={gardening} alt="" />
+            </div>
+          </div>
+        </section>
+        <section className="Celebs">
+          <h2>Celebs you love, love us</h2>
+          <div className="Celebs-general">
+            {celebs &&
+              celebs.map((celeb) => {
+                return (
+                  <div className="Celebs-cards">
+                    <div className="Cel-Card">
+                      <img src={celeb.image} alt="" />
                     </div>
                   </div>
                 );

@@ -247,6 +247,10 @@
   gap: 24px;
 }
 
+.planters-cards {
+  width: 282px;
+}
+
 .planters-card {
   display: flex;
   flex-direction: column;
@@ -274,4 +278,70 @@
   color: white;
   font-size: 15px;
   font-weight: 600;
+}
+
+.Gardening {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.gardening-general {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  gap: 150px;
+  max-width: 100%;
+}
+
+.gardening-block {
+  width: 35%;
+}
+
+.gardening-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.gardening-text p {
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.gardening-text h2 {
+  text-decoration: underline;
+}
+
+.gardening-image img {
+  width: 100%;
+}
+
+.gardeningBtn {
+  padding: 20px;
+  width: 250px;
+  background: #3b823e;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.Celebs h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.Celebs-general {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-areas:
+    ". . . ."
+    ". . .";
+}
+
+.Cel-Card img {
+  width: 50%;
 }
