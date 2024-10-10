@@ -232,3 +232,46 @@
   font-size: 15px;
   font-weight: 600;
 }
+
+.planters {
+  text-align: center;
+}
+
+.planters h2 {
+  text-decoration: underline;
+}
+
+.planters-general {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.planters-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.planters-image {
+  border-radius: 10px;
+  width: 250px;
+}
+
+.planters-card p {
+  font-weight: 600;
+}
+
+.plantersBtn {
+  padding: 10px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+  background-color: #3b823e;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}

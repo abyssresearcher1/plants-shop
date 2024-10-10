@@ -122,5 +122,31 @@
       "price": 1200.0,
       "image": "https://www.plantshop.me/media/1536310812Plant_1-600x600.jpg"
     }
+  ],
+  "planters": [
+    {
+      "id": 1,
+      "name": "Tale Pot",
+      "price": 350,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_qmCRp1cRn8-nFK7fm-g51yVgzOF11zJayoyfa1zNJnrY-rzQ5gLxYrZhJtvTTQ883Y0&usqp=CAU"
+    },
+    {
+      "id": 2,
+      "name": "Ice Cream Pot",
+      "price": 350,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_qmCRp1cRn8-nFK7fm-g51yVgzOF11zJayoyfa1zNJnrY-rzQ5gLxYrZhJtvTTQ883Y0&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "name": "Beige Fracture",
+      "price": 350,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_qmCRp1cRn8-nFK7fm-g51yVgzOF11zJayoyfa1zNJnrY-rzQ5gLxYrZhJtvTTQ883Y0&usqp=CAU"
+    },
+    {
+      "id": 4,
+      "name": "Mint Fusion",
+      "price": 350,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_qmCRp1cRn8-nFK7fm-g51yVgzOF11zJayoyfa1zNJnrY-rzQ5gLxYrZhJtvTTQ883Y0&usqp=CAU"
+    }
   ]
 }

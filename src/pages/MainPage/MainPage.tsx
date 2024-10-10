@@ -22,6 +22,13 @@ const MainPage = () => {
     image: string;
   }
 
+  interface Planters {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+  }
+
   interface Plant {
     id: number;
     name: string;
@@ -61,6 +68,7 @@ const MainPage = () => {
 
   const [plants, setPlants] = useState<Plant[]>([]);
   const [hotSales, setHotSales] = useState<HotSalesPlants[]>([]);
+  const [planters, setPlanters] = useState<Planters[]>([]);
 
   const getPlants = async () => {
     try {
@@ -85,9 +93,21 @@ const MainPage = () => {
     }
   };
 
+  const getPlanters = async () => {
+    try {
+      const { data } = await axios.get<Planters[]>(
+        `${process.env.REACT_APP_MAIN_API}/planters`
+      );
+      setPlanters(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getPlants();
     getHotSales();
+    getPlanters();
   }, []);
 
   return (
@@ -182,6 +202,28 @@ const MainPage = () => {
                       <p>{plants.name}</p>
                       <span>${plants.price}</span>
                       <button className="hotBtn">Buy</button>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </section>
+        <section className="planters">
+          <h2>Planters</h2>
+          <div className="planters-general">
+            {planters &&
+              planters.map((planter) => {
+                return (
+                  <div className="planters-cards" key={planter.id}>
+                    <div className="planters-card">
+                      <img
+                        src={planter.image}
+                        alt="planter-image"
+                        className="planters-image"
+                      />
+                      <p>{planter.name}</p>
+                      <span>${planter.price}</span>
+                      <button className="plantersBtn">Buy</button>
                     </div>
                   </div>
                 );
