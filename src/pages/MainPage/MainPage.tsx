@@ -33,6 +33,17 @@ const MainPage = () => {
     image: string;
   }
 
+  interface HotSalesPlants {
+    id: number;
+    name: string;
+    category: string;
+    origin: string;
+    watering_frequency: string;
+    light_needs: string;
+    price: number;
+    image: string;
+  }
+
   const categories: Array<Category> = [
     { name: "bonsai", image: bonsai },
     { name: "cactus", image: cactus },
@@ -49,6 +60,7 @@ const MainPage = () => {
   ];
 
   const [plants, setPlants] = useState<Plant[]>([]);
+  const [hotSales, setHotSales] = useState<HotSalesPlants[]>([]);
 
   const getPlants = async () => {
     try {
@@ -62,8 +74,20 @@ const MainPage = () => {
     }
   };
 
+  const getHotSales = async () => {
+    try {
+      const { data } = await axios.get<HotSalesPlants[]>(`
+          ${process.env.REACT_APP_MAIN_API}/HotSales
+        `);
+      setHotSales(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getPlants();
+    getHotSales();
   }, []);
 
   return (
@@ -144,6 +168,24 @@ const MainPage = () => {
                 <button className="BlogsBtn">Read</button>
               </div>
             </div>
+          </div>
+        </section>
+        <section className="HotSales">
+          <h2>Hot Sale</h2>
+          <div className="HotSales-general">
+            {hotSales &&
+              hotSales.map((plants) => {
+                return (
+                  <div className="Cards" key={plants.id}>
+                    <div className="Card">
+                      <img src={plants.image} alt="" />
+                      <p>{plants.name}</p>
+                      <span>${plants.price}</span>
+                      <button className="hotBtn">Buy</button>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </section>
       </div>

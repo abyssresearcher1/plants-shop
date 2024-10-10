@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+.mainpage {
+  background: #e5e5e5;
+}
+
 .mainpage_banner {
   width: 100%;
 }
@@ -60,7 +64,7 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  background-color: #dbdbdb;
+  background-color: #ffffff;
   padding: 2%;
   border-radius: 10px;
 }
@@ -116,7 +120,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #dbdbdb;
+  background: #ffffff;
 }
 
 .trendingBtn {
@@ -178,4 +182,53 @@
   background-color: #3b823e;
   color: #ffffff;
   cursor: pointer;
+}
+
+.HotSales {
+  text-align: center;
+}
+
+.HotSales-general {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.HotSales h2 {
+  text-decoration: underline;
+}
+
+.Cards {
+  padding: 1%;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 10px;
+}
+
+.Card p {
+  font-weight: 600;
+  margin: 0;
+}
+
+.Card img {
+  border-radius: 10px;
+  width: 250px;
+}
+
+.hotBtn {
+  padding: 10px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+  background-color: #3b823e;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
 }
