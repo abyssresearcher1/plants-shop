@@ -121,6 +121,31 @@ const MainPage = () => {
               })}
           </div>
         </section>
+        <section className="Blogs">
+          <h2>Blogs</h2>
+          <div className="Blogs-general">
+            <div className="Blogs-left Blogs-box">
+              <div className="Blogs-text">
+                <p>
+                  8 Best <br /> Low Maintenance Plants <br /> For a Busy Home
+                </p>
+              </div>
+              <div>
+                <button className="BlogsBtn">Read</button>
+              </div>
+            </div>
+            <div className="Blogs-right Blogs-box">
+              <div className="Blogs-text">
+                <p>
+                  Air Purifying <br /> Plants You Should Take Home <br /> Today
+                </p>
+              </div>
+              <div>
+                <button className="BlogsBtn">Read</button>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </Layout>
   );

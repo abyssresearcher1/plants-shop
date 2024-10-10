@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
       <div className="nav">
         <nav className="navbar">
           <Link to={"/"}>Home</Link>
-          <Link to={"#"}>Plants</Link>
+          <Link to={"/Plants"}>Plants</Link>
           <Link to={"#"}>Planters</Link>
           <Link to={"#"}>Essentials</Link>
           <Link to={"#"}>Services</Link>
