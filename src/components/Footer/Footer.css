@@ -1,0 +1,20 @@
+footer {
+  background: #436e35;
+}
+
+.footer-general {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
