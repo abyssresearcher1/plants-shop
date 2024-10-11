@@ -176,6 +176,7 @@ const MainPage = () => {
                     </div>
                     <div className="trending-name">
                       <p>{item.name}</p>
+                      <span>${item.price}</span>
                     </div>
                     <div className="trendingBtn-block">
                       <button className="trendingBtn">Buy</button>
