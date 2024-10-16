@@ -1,20 +1,43 @@
 footer {
   background: #436e35;
+  padding: 2% 0 2% 0;
 }
 
 .footer-general {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5%;
   align-items: center;
 }
 
 .footer-nav {
   display: flex;
-  gap: 20px;
+  gap: 50px;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.footer-links h3 {
+  color: #ffffff;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.contacts-text {
+  color: #ffffff;
+  text-align: right;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 16px;
 }

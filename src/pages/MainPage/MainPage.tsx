@@ -11,6 +11,7 @@ import AirPlants from "../../assets/AirPlants.png";
 import Indoor from "../../assets/Indoor.png";
 import Flowering from "../../assets/Flowering.png";
 import gardening from "../../assets/gardening.png";
+import jenya from "../../assets/Jenya.png";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -278,7 +279,7 @@ const MainPage = () => {
                 return (
                   <div className="Celebs-cards">
                     <div className="Cel-Card">
-                      <img src={celeb.image} alt="" />
+                      <img src={jenya} alt="" />
                     </div>
                   </div>
                 );

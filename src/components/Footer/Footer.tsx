@@ -40,7 +40,10 @@ const Footer = () => {
         </div>
         <div className="footer-contacts">
           <div className="contacts-text">
-            © 2021 Plan A Plant All Rights Reserved
+            <p>
+              {" "}
+              © 2021 Plan A Plant <br /> All Rights Reserved
+            </p>
           </div>
           <div className="footer-icons">
             <img src={facebook} alt="" />
