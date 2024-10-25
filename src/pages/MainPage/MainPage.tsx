@@ -17,6 +17,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import "./MainPage.css";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
   interface CelebsRoot {
@@ -138,9 +139,9 @@ const MainPage = () => {
           <img src={banner} alt="banner" className="mainpage_banner" />
         </div>
         <div className="all">
-          <a href="#">
+          <Link to={"/plants"}>
             See all <img src={arrow} alt="arrow right" />
-          </a>
+          </Link>
         </div>
         <div className="categories">
           {categories.map((item, index) => (
@@ -275,10 +276,24 @@ const MainPage = () => {
           <h2>Celebs you love, love us</h2>
           <div className="Celebs-general">
             {celebs &&
+              celebs.splice(4) &&
               celebs.map((celeb) => {
                 return (
                   <div className="Celebs-cards">
                     <div className="Cel-Card">
+                      <img src={jenya} alt="" />
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+          <div className="low-celebs-general">
+            {celebs &&
+              celebs.splice(3) &&
+              celebs.map((celeb) => {
+                return (
+                  <div className="low_celebs">
+                    <div className="low-celebs-card">
                       <img src={jenya} alt="" />
                     </div>
                   </div>

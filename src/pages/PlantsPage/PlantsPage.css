@@ -1,3 +1,8 @@
+.plantspage {
+  margin: 0 auto;
+  background: #e5e5e5;
+}
+
 .shop-banner {
   display: flex;
   justify-content: center;
@@ -5,4 +10,45 @@
 
 .shopPage-banner {
   width: 100%;
+}
+
+.plants-page_general {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+}
+
+.sidebar {
+  width: 30%;
+}
+
+.plants-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  width: 50%;
+}
+
+.plant-card {
+  padding: 3%;
+  border-radius: 10px;
+  width: 25%;
+  background-color: #ffffff;
+}
+
+.plant-card img {
+  width: 100%;
+  height: 150px;
+}
+
+.plant-cardBtn {
+  padding: 20px;
+  width: 100%;
+  background: #3b823e;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
 }

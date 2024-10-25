@@ -1,14 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../Layout/Layout";
 import shopBanner from "../../assets/ShopBanner.png";
 import "./PlantsPage.css";
+import axios from "axios";
 
 const PlantsPage = () => {
-  // const [isOpen, setIsOpen] = useState(null);
+  interface Plants {
+    id: number;
+    image: string;
+    name: string;
+    price: number;
+  }
 
-  // const openMenu = () => {
-  //   return setIsOpen(true);
-  // };
+  const [isOpen, setIsOpen] = useState<Boolean>(true);
+
+  const openMenu = () => {
+    return setIsOpen(!isOpen);
+  };
+
+  const [plants, setPlants] = useState<Plants[]>([]);
+
+  const getPlants = async () => {
+    try {
+      let { data } = await axios.get(
+        `${process.env.REACT_APP_MAIN_API}/Plants`
+      );
+      setPlants(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPlants();
+  }, []);
 
   return (
     <Layout>
@@ -19,13 +44,34 @@ const PlantsPage = () => {
         <div className="plants-page_general">
           <div className="sidebar">
             <div className="plants-categories">
-              {/* <button className="opencategoriesBtn" onClick={openMenu}> */}
+              <button className="opencategoriesBtn" onClick={openMenu}>
                 Categories
-              {/* </button> */}
-              {/* {isOpen && ()} */}
+              </button>
+              <div
+                className="show-plants"
+                style={{ display: isOpen ? "none" : "block" }}
+              >
+                <p>asdasdasdad</p>
+                <p>asdasdasdad</p>
+                <p>asdasdasdad</p>
+              </div>
             </div>
+            <div className="price"></div>
           </div>
-          <div className="show-plants"></div>
+          <section className="plants-section">
+            {plants &&
+              plants.splice(9) &&
+              plants.map((plant) => {
+                return (
+                  <div className="plant-card" key={plant.id}>
+                    <img src={plant.image} alt="plant-image" />
+                    <p>{plant.name}</p>
+                    <p>{plant.price}</p>
+                    <button className="plant-cardBtn">Buy</button>
+                  </div>
+                );
+              })}
+          </section>
         </div>
       </div>
     </Layout>

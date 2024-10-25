@@ -31,6 +31,12 @@
   margin: 0 auto;
   justify-content: center;
   max-width: 1200px;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-align: center;
+  gap: 24px;
 }
 
 .categories_icons {
@@ -38,6 +44,12 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 7%;
+  cursor: pointer;
+  width: 15%;
+}
+
+.categories_icons img {
+  padding: 0;
 }
 
 .best {
@@ -46,15 +58,7 @@
   padding-bottom: 9%;
 }
 
-.best h2 {
-  font-family: "Unna", serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 35px;
-  text-decoration: underline;
-  text-align: center;
-  padding-top: 2%;
-}
+
 
 .bestsellers {
   display: flex;
@@ -83,6 +87,8 @@
   background-color: #3b823e;
   color: #ffffff;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .plants-list {
@@ -93,7 +99,7 @@
   padding-bottom: 7%;
 }
 
-.trending h2 {
+h2 {
   font-family: "Unna", serif;
   font-weight: 700;
   font-style: normal;
@@ -111,10 +117,18 @@
 
 .trending-images {
   width: 90%;
+  height: 80%;
+
+  border-radius: 10px;
+}
+
+.trending-name {
+  padding: 10px;
 }
 
 .trending-name p {
   font-weight: 600;
+  margin: 0;
 }
 
 .trending-plants {
@@ -143,6 +157,7 @@
   border: none;
   background: #3b823e;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .Blogs {
@@ -155,9 +170,7 @@
   justify-content: center;
 }
 
-.Blogs h2 {
-  text-decoration: underline;
-}
+
 
 .Blogs-box {
   width: 40%;
@@ -211,10 +224,7 @@
   gap: 24px;
 }
 
-.HotSales h2 {
-  text-decoration: underline;
-  font-size: 40px;
-}
+
 
 .Cards {
   padding: 1%;
@@ -257,10 +267,7 @@
   padding-bottom: 5%;
 }
 
-.planters h2 {
-  text-decoration: underline;
-  font-size: 40px;
-}
+
 
 .planters-general {
   display: flex;
@@ -353,22 +360,35 @@
   padding-bottom: 10%;
 }
 
-.Celebs h2 {
-  text-align: center;
-  text-decoration: underline;
+.Celebs-general {
+  display: flex;
+  justify-content: center;
+  gap: 1%;
 }
 
-.Celebs-general {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-template-areas:
-    ". . . ."
-    ". . .";
+.Celebs-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19%;
 }
 
 .Cel-Card img {
-  width: 50%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.low-celebs-general {
+  display: flex;
+  justify-content: center;
+  gap: 1%;
+}
+
+.low_celebs {
+  width: 25.7%;
+}
+
+.low-celebs-card img {
+  width: 100%;
+  border-radius: 10px;
 }
