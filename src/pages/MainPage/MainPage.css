@@ -58,8 +58,6 @@
   padding-bottom: 9%;
 }
 
-
-
 .bestsellers {
   display: flex;
   justify-content: space-between;
@@ -170,8 +168,6 @@ h2 {
   justify-content: center;
 }
 
-
-
 .Blogs-box {
   width: 40%;
   height: 300px;
@@ -224,8 +220,6 @@ h2 {
   gap: 24px;
 }
 
-
-
 .Cards {
   padding: 1%;
   background-color: #ffffff;
@@ -267,8 +261,6 @@ h2 {
   padding-bottom: 5%;
 }
 
-
-
 .planters-general {
   display: flex;
   justify-content: center;
@@ -282,24 +274,26 @@ h2 {
 .planters-card {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  padding: 10px;
+  align-items: center;
+  padding: 7%;
   background: #ffffff;
   border-radius: 10px;
 }
 
 .planters-image {
   border-radius: 10px;
-  width: 250px;
+  width: 200px;
 }
 
 .planters-card p {
   font-weight: 600;
+  margin: 0;
 }
+
 
 .plantersBtn {
   padding: 10px;
-  width: 250px;
+  width: 100%;
   border-radius: 10px;
   border: none;
   background-color: #3b823e;

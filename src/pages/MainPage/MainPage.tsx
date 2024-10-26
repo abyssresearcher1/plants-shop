@@ -244,8 +244,10 @@ const MainPage = () => {
                         alt="planter-image"
                         className="planters-image"
                       />
-                      <p>{planter.name}</p>
-                      <span>${planter.price}</span>
+                      <div>
+                        <p>{planter.name}</p>
+                        <span>${planter.price}</span>
+                      </div>
                       <button className="plantersBtn">Buy</button>
                     </div>
                   </div>

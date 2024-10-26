@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import Layout from "../../Layout/Layout";
 import shopBanner from "../../assets/ShopBanner.png";
 import "./PlantsPage.css";
@@ -12,17 +12,22 @@ const PlantsPage = () => {
     price: number;
   }
 
-  const [isOpen, setIsOpen] = useState<Boolean>(true);
+  const [isCategoriesOpen, setIsCategoriesOpen] = useState<boolean>(true);
+  const [isPriceOpen, setIsPriceOpen] = useState<boolean>(true);
+  const [price, setPrice] = useState<number>(10);
+  const [plants, setPlants] = useState<Plants[]>([]);
 
   const openMenu = () => {
-    return setIsOpen(!isOpen);
+    setIsCategoriesOpen((prev) => !prev);
   };
 
-  const [plants, setPlants] = useState<Plants[]>([]);
+  const openPriceMenu = () => {
+    setIsPriceOpen((prev) => !prev);
+  };
 
   const getPlants = async () => {
     try {
-      let { data } = await axios.get(
+      const { data } = await axios.get<Plants[]>(
         `${process.env.REACT_APP_MAIN_API}/Plants`
       );
       setPlants(data);
@@ -35,6 +40,10 @@ const PlantsPage = () => {
     getPlants();
   }, []);
 
+  const changePrice = (e: ChangeEvent<HTMLInputElement>) => {
+    setPrice(Number(e.target.value));
+  };
+
   return (
     <Layout>
       <div className="plantspage">
@@ -44,33 +53,72 @@ const PlantsPage = () => {
         <div className="plants-page_general">
           <div className="sidebar">
             <div className="plants-categories">
-              <button className="opencategoriesBtn" onClick={openMenu}>
-                Categories
+              <button
+                className="opencategoriesBtn plantsBtn"
+                onClick={openMenu}
+              >
+                All categories
               </button>
               <div
-                className="show-plants"
-                style={{ display: isOpen ? "none" : "block" }}
+                className="show-plants plantsBtn"
+                style={{ display: isCategoriesOpen ? "none" : "flex" }}
               >
-                <p>asdasdasdad</p>
-                <p>asdasdasdad</p>
-                <p>asdasdasdad</p>
+                <button>Indoor plants</button>
+                <button>Outdoor plants</button>
+                <button>Medicinal plants</button>
               </div>
             </div>
-            <div className="price"></div>
+            <section className="price">
+              <button className="priceBtn plantsBtn" onClick={openPriceMenu}>
+                Price
+              </button>
+              <div
+                className="show-price"
+                style={{ display: isPriceOpen ? "none" : "block" }}
+              >
+                <input
+                  type="range"
+                  style={{ width: "200px" }}
+                  min={10}
+                  max={10000}
+                  value={price}
+                  onChange={changePrice}
+                />
+                <p>Selected Price: ${price}</p>{" "}
+              </div>
+            </section>
+            <section className="include">
+              <button className="openIncludeBtn plantsBtn">Include</button>
+              <div className="include-wrapper">
+                <p>
+                  <input type="checkbox" />
+                  Planter
+                </p>
+                <p>
+                  <input type="checkbox" />
+                  Combo
+                </p>
+                <p>
+                  <input type="checkbox" />
+                  Flowers
+                </p>
+                <p>
+                  <input type="checkbox" />
+                  Service
+                </p>
+              </div>
+            </section>
           </div>
           <section className="plants-section">
-            {plants &&
-              plants.splice(9) &&
-              plants.map((plant) => {
-                return (
-                  <div className="plant-card" key={plant.id}>
-                    <img src={plant.image} alt="plant-image" />
-                    <p>{plant.name}</p>
-                    <p>{plant.price}</p>
-                    <button className="plant-cardBtn">Buy</button>
-                  </div>
-                );
-              })}
+            {plants.slice(0, 9).map((plant) => (
+              <div className="plant-card" key={plant.id}>
+                <img src={plant.image} alt="plant-image" />
+                <p>{plant.name}</p>
+                <span>${plant.price}</span>
+                <button className="plant-cardBtn">Buy</button>
+              </div>
+            ))}
+            <a href="#">Load more</a>
           </section>
         </div>
       </div>
